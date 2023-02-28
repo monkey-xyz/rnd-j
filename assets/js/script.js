@@ -15,6 +15,8 @@ const formSubmit = (e) => {
     document.querySelector("error-message").innerHTML("You can't leave this empty!");
   }
 
+  console.log(cc)
+
   printOption();
 }
 
@@ -30,7 +32,9 @@ const printOption = () => {
     o_button.setAttribute("item-index", i);
 
     o_button.onclick = function() {
-      cc.pop[this.getAttribute("item-index")]
+      cc.splice(this.getAttribute("item-index"), 1)
+      this.parentElement.remove()
+
       console.log(cc)
     }
   }
