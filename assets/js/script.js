@@ -27,11 +27,13 @@ const printOption = () => {
     o_div.textContent = cc[i];
     o_div.appendChild(o_button);
     o_button.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-  }
-}
+    o_button.setAttribute("item-index", i);
 
-const deleteOption = () => {
-  console.log(this.getAttribute());
+    o_button.onclick = function() {
+      cc.pop[this.getAttribute("item-index")]
+      console.log(cc)
+    }
+  }
 }
 
 const selection = () => {
@@ -39,4 +41,5 @@ const selection = () => {
 }
 
 printOption;
+
 submit_box.addEventListener("submit", formSubmit);
