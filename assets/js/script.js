@@ -1,6 +1,7 @@
 const result_box = document.querySelector("#results");
 const pool_box = document.querySelector("#pool");
 const submit_box = document.querySelector("#submit-form");
+const select_box = document.querySelector("#select-form");
 
 const cc = [];
 
@@ -18,7 +19,7 @@ const formSubmit = (e) => {
   console.log(cc)
 
   printOption();
-}
+};
 
 const printOption = () => {
   var o_div = document.createElement("div");
@@ -34,15 +35,13 @@ const printOption = () => {
     o_button.onclick = function() {
       cc.splice(this.getAttribute("item-index"), 1)
       this.parentElement.remove()
-
-      console.log(cc)
     }
   }
-}
+};
 
 const selection = () => {
-  Math.random();
-}
+  return cc[Math.floor(Math.random() * cc.length)];
+};
 
 printOption;
 
