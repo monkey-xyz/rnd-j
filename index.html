@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <title>random-js</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5efd198a8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <h1>Random-JS</h1>
+      </header>
+
+      <div>
+        <p>This is a small site that chooses a set amount of items from your own custom pool to help you decide more efficiently (sorta).</p>
+      </div>
+
+      <div>
+        <p>Previous Pools</p>
+
+        <div id="history">
+
+        </div>
+      </div>
+
+      <form onsubmit="submission()">
+        <label for="sg">Item</label>
+        <input type="text" id="sg" name="sg">
+
+        <button type="submit">Submit Item</button>
+      </form>
+      <div id="error-message"></div>
+
+      <div id="pool">
+        
+      </div>
+
+      <form id="select-form">
+        <label for="">How many results?</label>
+        <input type="number" id="" min="0" max="15">
+        <button>Get your selection</button>
+      </form>
+
+      <div id="results">
+
+      </div>
+
+      <footer>
+        @ kynome, 2023
+      </footer>
+
+      <script src="./assets/js/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </main>
+  </body>
+</html>
