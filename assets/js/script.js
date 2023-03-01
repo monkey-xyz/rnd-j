@@ -12,8 +12,10 @@ const formSubmit = (e) => {
 
   if (opt) {
     cc.push(opt)
+
+    document.querySelector("#error-message").innerHTML = "";
   } else {
-    document.querySelector("error-message").innerHTML("You can't leave this empty!");
+    document.querySelector("#error-message").innerHTML = "You can't leave this empty!";
   }
 
   console.log(cc)
@@ -26,7 +28,7 @@ const printOption = () => {
   var o_button = document.createElement("button");
 
   for (let i = 0; i < cc.length; i++) {
-    result_box.appendChild(o_div);
+    pool_box.appendChild(o_div);
     o_div.textContent = cc[i];
     o_div.appendChild(o_button);
     o_button.innerHTML = '<i class="fa-solid fa-xmark"></i>';
@@ -39,8 +41,8 @@ const printOption = () => {
   }
 };
 
-const selection = () => {
-  return cc[Math.floor(Math.random() * cc.length)];
+const optionSelect = () => {
+  result_box.innerHTML = cc[Math.floor(Math.random() * cc.length)];
 };
 
 printOption;
