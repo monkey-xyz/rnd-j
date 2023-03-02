@@ -13,9 +13,9 @@ const formSubmit = (e) => {
   if (opt) {
     cc.push(opt)
 
-    document.querySelector("#error-message").innerHTML = "";
+    document.querySelector("#error-message-submit").innerHTML = "";
   } else {
-    document.querySelector("#error-message").innerHTML = "You can't leave this empty!";
+    document.querySelector("#error-message-submit").innerHTML = "You can't leave this empty!";
   }
 
   console.log(cc)
@@ -41,10 +41,35 @@ const printOption = () => {
   }
 };
 
-const optionSelect = () => {
-  result_box.innerHTML = cc[Math.floor(Math.random() * cc.length)];
+const optionSelect = (rep) => {
+  result_box.innerHTML = "";
+
+  for (let i = 0; i < rep; i++) {
+    result_box.insertAdjacentHTML(
+      "afterbegin",
+      "<p>" + cc[Math.floor(Math.random() * cc.length)]) + "</p>";
+  }
 };
+
+const selectSubmit = (e) => {
+  e.preventDefault();
+
+  var opt = document.querySelector("#rs").value.trim();
+
+  document.querySelector("#error-message-select").innerHTML = "";
+
+  if (cc.length < opt) {
+    document.querySelector("#error-message-select").innerHTML = "You don't have enough entries in the pool for this.";
+
+    result_box.innerHTML = "";
+
+    return;
+  } else {
+    optionSelect(opt);
+  }
+}
 
 printOption;
 
 submit_box.addEventListener("submit", formSubmit);
+select_box.addEventListener("submit", selectSubmit);
