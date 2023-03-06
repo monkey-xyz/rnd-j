@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <main>
+    <main class="container-xxl">
       <header>
         <h1 class="text-center">Random-JS</h1>
       </header>
@@ -20,11 +20,13 @@
       </div>
 
       <div>
-        <p>Previous Pools</p>
+        <p>Previous Pool</p>
 
         <div id="history">
 
         </div>
+
+        <button onclick="deleteHistory()">Delete History?</button>
       </div>
 
       <form id="submit-form">
@@ -35,8 +37,8 @@
       </form>
       <div id="error-message-submit"></div>
 
-      <div id="pool">
-        
+      <div id="pool" class="container-m">
+
       </div>
 
       <form id="select-form">

@@ -3,6 +3,7 @@ const pool_box = document.querySelector("#pool");
 const submit_box = document.querySelector("#submit-form");
 const select_box = document.querySelector("#select-form");
 
+
 const cc = [];
 
 const formSubmit = (e) => {
@@ -30,6 +31,7 @@ const printOption = () => {
   for (let i = 0; i < cc.length; i++) {
     pool_box.appendChild(o_div);
     o_div.textContent = cc[i];
+    o_div.classList.add("rounded-end-2", "bg-dark-subtle");
     o_div.appendChild(o_button);
     o_button.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     o_button.setAttribute("item-index", i);
@@ -66,7 +68,16 @@ const selectSubmit = (e) => {
     return;
   } else {
     optionSelect(opt);
+    localStorage.setItem('past', JSON.stringify(cc));
   }
+};
+
+const prevPool = () => {
+  JSON.parse(localStorage.getItem('past'));
+}
+
+const deleteHistory = () => {
+  localStorage.clear();
 }
 
 printOption;
