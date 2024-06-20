@@ -25,30 +25,24 @@
         <div id="history">
 
         </div>
-
-        <button onclick="deleteHistory()">Delete History?</button>
       </div>
 
       <form id="submit-form">
         <label for="sg">Item</label>
         <input type="text" id="sg" name="sg">
 
-        <button type="submit">Submit Item</button>
+        <button class="btn btn-primary" type="submit">Submit Item</button>
       </form>
-      <div id="error-message-submit"></div>
+      <div class="text-danger" id="error-message-submit"></div>
 
       <div id="pool" class="container-m">
 
       </div>
 
       <form id="select-form">
-        <label for="">How many results?</label>
-        <input type="number" id="rs" min="0" max="15">
-        <button type="submit">Get your selection</button>
+        <button class="btn btn-primary" type="submit">Randomize</button>
       </form>
-      <div id="error-message-select"></div>
-
-      <!-- <button type="submit" onclick="optionSelect()">Get your selection</button> -->
+      <div class="text-danger" id="error-message-select"></div>
 
       <div id="results">
 

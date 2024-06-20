@@ -33,7 +33,7 @@ const printOption = () => {
     o_div.textContent = cc[i];
     o_div.classList.add("rounded-end-2", "bg-dark-subtle");
     o_div.appendChild(o_button);
-    o_button.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    o_button.innerHTML = '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
     o_button.setAttribute("item-index", i);
 
     o_button.onclick = function() {
@@ -56,11 +56,9 @@ const optionSelect = (rep) => {
 const selectSubmit = (e) => {
   e.preventDefault();
 
-  var opt = document.querySelector("#rs").value.trim();
-
   document.querySelector("#error-message-select").innerHTML = "";
 
-  if (cc.length < opt) {
+  if (cc.length < 1) {
     document.querySelector("#error-message-select").innerHTML = "You don't have enough entries in the pool for this.";
 
     result_box.innerHTML = "";
@@ -68,12 +66,19 @@ const selectSubmit = (e) => {
     return;
   } else {
     optionSelect(opt);
-    localStorage.setItem('past', JSON.stringify(cc));
+    localStorage.setItem("previous", JSON.stringify(cc));
   }
 };
 
 const prevPool = () => {
-  JSON.parse(localStorage.getItem('past'));
+  var previousPool = JSON.parse(localStorage.getItem("previous"));
+  // console.log(previousPool)
+
+  if (previousPool) {
+    document.querySelector("#history").innerHTML = "<p>" + previousPool + "</p>";
+
+    console.log(previousPool)
+  }
 }
 
 const deleteHistory = () => {
