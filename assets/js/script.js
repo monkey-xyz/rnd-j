@@ -31,7 +31,7 @@ const printOption = () => {
   for (let i = 0; i < cc.length; i++) {
     pool_box.appendChild(o_div);
     o_div.textContent = cc[i];
-    o_div.classList.add("rounded-end-2", "bg-dark-subtle");
+    o_div.classList.add("rounded-end-2", "bg-dark-subtle", "d-flex", "justify-content-between", "fs-4", "w-50", "mb-2", "ms-4", "p-2");
     o_div.appendChild(o_button);
     o_button.innerHTML = '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
     o_button.setAttribute("item-index", i);
@@ -43,10 +43,10 @@ const printOption = () => {
   }
 };
 
-const optionSelect = (rep) => {
+const optionSelect = () => {
   result_box.innerHTML = "";
 
-  for (let i = 0; i < rep; i++) {
+  for (let i = 0; i < 1; i++) {
     result_box.insertAdjacentHTML(
       "afterbegin",
       "<p>" + cc[Math.floor(Math.random() * cc.length)]) + "</p>";
@@ -65,7 +65,7 @@ const selectSubmit = (e) => {
 
     return;
   } else {
-    optionSelect(opt);
+    optionSelect(0);
     localStorage.setItem("previous", JSON.stringify(cc));
   }
 };

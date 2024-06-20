@@ -5,4 +5,4 @@ Random number generator built for a friend. Originally would be able to select m
 Default Bootstrap styling used.
 
 ## TBA
-- Previous Pools saved in LocalStorage
+- Previous Pools saved in LocalStorage, attempt to render it on page.
